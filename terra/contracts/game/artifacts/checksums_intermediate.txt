@@ -1,1 +1,1 @@
-87f33f27f74a2d173e10a2a1e5ec1677338430f04b9fb516458fe429e0ff698e  ./target/wasm32-unknown-unknown/release/game.wasm
+3402e5f500483b11e18674f53f8f6612ba011c429d9b1d7ad8ae974a088694a9  ./target/wasm32-unknown-unknown/release/game.wasm

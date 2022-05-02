@@ -3,6 +3,11 @@ use serde::{Deserialize, Serialize};
 use cosmwasm_std::Addr;
 
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
+pub struct MigrateMsg {
+
+}
+
+#[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
 pub struct InstantiateMsg {
     
 }
@@ -23,3 +28,4 @@ pub enum QueryMsg {
 pub struct ScoreResponse {
     pub scores: Vec<(Addr, u16)>,
 }
+

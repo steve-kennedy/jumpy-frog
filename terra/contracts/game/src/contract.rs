@@ -4,7 +4,7 @@ use cosmwasm_std::{to_binary, Binary, Deps, DepsMut, Env, MessageInfo, Response,
 use cw2::set_contract_version;
 
 use crate::error::ContractError;
-use crate::msg::{ScoreResponse, ExecuteMsg, InstantiateMsg, QueryMsg};
+use crate::msg::{InstantiateMsg, MigrateMsg, QueryMsg, ScoreResponse, ExecuteMsg};
 use crate::state::{State, STORAGE};
 
 // version info for migration info
@@ -12,11 +12,21 @@ const CONTRACT_NAME: &str = "crates.io:game";
 const CONTRACT_VERSION: &str = env!("CARGO_PKG_VERSION");
 
 #[cfg_attr(not(feature = "library"), entry_point)]
+pub fn migrate(
+    _deps: DepsMut, 
+    _env: Env, 
+    _msg: MigrateMsg
+) -> StdResult<Response> {
+
+    Ok(Response::default())
+}
+
+#[cfg_attr(not(feature = "library"), entry_point)]
 pub fn instantiate(
     deps: DepsMut,
     _env: Env,
     info: MessageInfo,
-    msg: InstantiateMsg,
+    _msg: InstantiateMsg,
 ) -> Result<Response, ContractError> {
 
     let state = State {
@@ -41,6 +51,7 @@ pub fn execute(
     info: MessageInfo,
     msg: ExecuteMsg,
 ) -> Result<Response, ContractError> {
+
     match msg {
         ExecuteMsg::UpsertScore { score } => try_upsert_score(deps, info, score),
     }
@@ -61,6 +72,7 @@ fn try_upsert_score(
         },
         None => {
             scores.push((sender.clone(), score));
+            scores.sort_by(|a, b| b.cmp(a));
         }
     }
     STORAGE.save(deps.storage, &state)?;

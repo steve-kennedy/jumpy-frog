@@ -7,9 +7,9 @@
       }
     },
     "game": {
-      "codeId": "10",
+      "codeId": "16",
       "contractAddresses": {
-        "default": "terra1yqlpux74ruv9485pqfg6athkh056ayq0lye67s"
+        "default": "terra1d96zn6djsr562ajdt69a6s330gaqyv9uycrd4v"
       }
     }
   },
