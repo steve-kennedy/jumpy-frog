@@ -19,7 +19,7 @@ const Guide = () => {
                         * Each pipe cleared earns you points while increasing the difficulty
                     </p>
                     <p className="help">
-                        * Submit your score to the Terra blockchain to be immortalized on the leaderboard
+                        * Submit your score to the Terra blockchain to be immortalized on the scoreboard
                     </p>
 
                 </div>

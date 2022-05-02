@@ -32,25 +32,43 @@ span {
 }
 
 .header-titles {
+    padding-top: 20px;
     color: white;
     line-height: 20px;
     text-align: center;
     cursor: pointer;
 }
 
-.wallet-address {
-    color:white; 
-    font-size: 18px;
-    font-weight: bold;
+.wallet-info-container {
     position: absolute;
     top: 65px;
     right: 50px;
-    height: 45px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.wallet-info {
+    color: white;
+    text-align: center;
+    width: 140px;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
     border: 0;
-    padding: 0 40px;
     border-radius: 5px;
+    
+}
+
+.wallet-address {
     animation: gradient-animation 4s ease infinite;
     background-image: linear-gradient(to right, #ff6e7f 0%, #f09819 100%);
+}
+
+.wallet-disconnect {
+    animation: gradient-animation 4s ease infinite;
+    background-image: linear-gradient(to right, #c267ee 0%, #51daec 100%);
+    cursor: pointer;
 }
 
 .home-link{

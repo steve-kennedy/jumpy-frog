@@ -30,32 +30,13 @@ const Leaderboard = () => {
         }
 
         return scores.map((score, index) => {
-            return (
+            return ( <></>
 
-                <div className="score-container">
-                    <div className="score" key={index}>
-                        <h3>All time</h3>
-                        <span>
-                            {/* Format as address:score, with score truncated to first/last digits */}
-                            {score[0].slice(0, 5) + '..' + score[0].slice(-6)}:{' '}
-                            {score[1].toString().padStart(2, '0')}
-                        </span>
-                    </div>
 
-                    <div className="score" key={index}>
-                        <h3>Your attempts</h3>
 
-                        { score[0] === connectedWallet.walletAddress ? (
-                            <span>
-                                {score[0].slice(0, 5) + '..' + score[0].slice(-6)}:{' '}
-                                {score[1].toString().padStart(2, '0')}
-                            </span>                                
-                            ) : (
-                            <></>
-                            )}
-                            
-                    </div>
-                </div>
+
+                
+
 
 
             );
@@ -67,7 +48,7 @@ const Leaderboard = () => {
             <Header />
 
             <div className="score-board-container">
-                <h3>Top Scores</h3>
+                <h3>Scoreboard</h3>
                 {loading ? (
                     <div>Loading...</div>
                 ) : (

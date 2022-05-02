@@ -136,7 +136,7 @@ const Play = () => {
             console.log(tx);
             alert('Score submitted!');
             setLoading(false);
-            window.location.href = '/leaderboard';
+            window.location.href = '/scoreboard';
         }
     };
 

@@ -7,8 +7,7 @@ import './index.css';
 
 import Play from './pages/play';
 import Guide from './pages/guide';
-import Leaderboard from './pages/leaderboard';
-import Game from './pages/play';
+import Scoreboard from './pages/scoreboard';
 
 import { getChainOptions, WalletProvider } from '@terra-money/wallet-provider';
 
@@ -25,7 +24,7 @@ getChainOptions().then((chainOptions) => {
                 <Route path="/" element={<App />} />
                 <Route path="/play" element={<Play />} />
                 <Route path="/guide" element={<Guide />} />
-                <Route path="/leaderboard" element={<Leaderboard />} />
+                <Route path="/scoreboard" element={<Scoreboard />} />
               </Routes>
             </BrowserRouter>
     

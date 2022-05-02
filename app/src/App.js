@@ -5,7 +5,7 @@ import { useWallet, WalletStatus } from '@terra-money/wallet-provider';
 import jumpyFrogImg from './images/jumpy-frog.png';
 
 function App() {
-  const { status, connect, disconnect, availableConnectTypes } = useWallet();
+  const { status, connect, availableConnectTypes } = useWallet();
 
   console.log("Wallet status is: ", status);
   console.log("Available connection types are: ", availableConnectTypes);
@@ -25,18 +25,6 @@ function App() {
           </button>
         </div>
       );
-    } else if (status === WalletStatus.WALLET_CONNECTED) {
-
-      return (
-        <button
-          className="cta-button connect-wallet-button"
-          type="button"
-          onClick={() => disconnect()}
-        >
-          Disconnect Terra Wallet
-        </button>
-      )
-
     }
   };
 

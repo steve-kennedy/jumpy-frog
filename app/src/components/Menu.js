@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const menu_options = [
     { name: 'Play', link: '/play' },
-    { name: 'Leaderboard', link: '/leaderboard' },
+    { name: 'Scoreboard', link: '/scoreboard' },
     { name: 'How to play', link: '/guide'},
 ];
 
