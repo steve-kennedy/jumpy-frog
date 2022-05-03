@@ -1,5 +1,5 @@
 # Jumpy Frog
-A Flappy Bird clone built using React JS, and storing scores on the Terra blockchain.
+A Flappy Bird inspired clicker game built using React JS, and storing scores on the Terra blockchain.
 
 ## Deployment
 To deploy locally, navigate to the app/ folder and `npm start`.
