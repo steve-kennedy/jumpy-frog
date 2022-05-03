@@ -1,9 +1,9 @@
-import { useWallet, useConnectedWallet, WalletStatus } from "@terra-money/wallet-provider";
+import { useWallet, useConnectedWallet } from "@terra-money/wallet-provider";
 
 const WalletAddress = () => {
     const connectedWallet = useConnectedWallet();
     const { terraAddress } = { ...connectedWallet };
-    const { status, connect, disconnect } = useWallet();
+    const { connect, disconnect } = useWallet();
 
     const renderConnectedInfo = () => {
         return (
@@ -54,10 +54,6 @@ const WalletAddress = () => {
             </button>
         )
     } 
-
-    const renderReconnectButton = () => {
-
-    }
 
     return (
         <div className="wallet-info-container">
