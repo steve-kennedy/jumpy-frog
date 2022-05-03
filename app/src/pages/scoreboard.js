@@ -1,6 +1,5 @@
 import * as query from '../contract/query';
 import { useConnectedWallet } from '@terra-money/wallet-provider';
-import { connected } from 'process';
 import { useEffect, useState } from 'react';
 import Header from '../components/Header';
 

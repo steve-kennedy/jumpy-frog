@@ -7,10 +7,13 @@
 /terra/contracts/game/.DS_Store
 /terra/contracts/game/*.iml
 /terra/contracts/game/.idea
-/terra/node_modules/
+/terra/node_modules
 /terra/frontend
 
 # ========== React app ==========
+# build files
+/app/build
+
 # Logs
 /app/logs
 /app/*.log
