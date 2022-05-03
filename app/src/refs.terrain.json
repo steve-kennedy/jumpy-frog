@@ -1,9 +1,9 @@
 {
     "localterra": {
-      "clicker": {
-        "codeId": "10",
+      "game": {
+        "codeId": "20",
         "contractAddresses": {
-          "default": "terra1yqlpux74ruv9485pqfg6athkh056ayq0lye67s"
+          "default": "terra1ncare3tnhppp3l47t0krwp0qcjmyhcacg8vc7e"
         }
       }
     },

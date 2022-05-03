@@ -12,7 +12,7 @@ const Leaderboard = () => {
     useEffect(() => {
         setLoading(true);
         const fetchScores = async() => {
-            if (connectedWallet && connectedWallet.network.name === 'testnet') {
+            if (connectedWallet && connectedWallet.network.name === 'localterra') {
                 return (await query.getScores(connectedWallet)).scores;
             }
         };
@@ -30,18 +30,47 @@ const Leaderboard = () => {
         } else if (connectedWallet && (!scores || scores.length < 1)) {
             return <div>No scores available :( </div>;
         } else if (connectedWallet && scores) {
-            return scores.map((score, index) => {
-                return ( 
+            return (
+                <div>
+                   { renderTopScores() }
+                   <p></p>
+                    { renderWalletScore() }
+                </div>
+            )
+        }
+    };
+
+    const renderTopScores = () => {
+        return scores.slice(0,8).map((score, index) => {
+            return (
                     <div className="score" key={index}>
                         <span style={{ color: score[0] === connectedWallet.walletAddress? "red" : ""  }}>
                             {/* Format as address:score, with score truncated to first/last digits */}
                             {index + 1 + '.  '}
-                            {score[0].slice(0, 5) + '..' + score[0].slice(-6)}:{' '}
+                            {score[0].slice(0, 5) + '...' + score[0].slice(-5)}:{' '}
                             {score[1].toString().padStart(2, '0')}
                         </span>
                     </div>
-                );
-            });
+            );
+        });
+    };
+
+    const renderWalletScore = () => {
+        if (scores.length > 8) {
+            return scores.slice(8, scores.length).map((score, index) => {
+                if ( score[0] === connectedWallet.walletAddress) {
+                    return (
+                        <div className="score" key={index}>
+                            <span style={{ color: score[0] === connectedWallet.walletAddress? "red" : ""  }}>
+                                {/* Format as address:score, with score truncated to first/last digits */}
+                                {index + 1 + 8 + '.  '}
+                                {score[0].slice(0, 5) + '...' + score[0].slice(-5)}:{' '}
+                                {score[1].toString().padStart(2, '0')}
+                            </span>
+                        </div>
+                    )
+                }   
+            }); 
         }
     };
 
