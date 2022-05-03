@@ -54,6 +54,8 @@ pub fn execute(
 
     match msg {
         ExecuteMsg::UpsertScore { score } => try_upsert_score(deps, info, score),
+        ExecuteMsg::AddScore { score } => add_score(deps, info, score),
+        ExecuteMsg::ResetScores { } => reset_scores(deps, info),
     }
 }
 
@@ -81,6 +83,39 @@ fn try_upsert_score(
         .add_attribute("player", info.sender)
         .add_attribute("score", score.to_string())
     )
+}
+
+fn add_score(
+    deps: DepsMut,
+    info: MessageInfo,
+    score: u16,
+) -> Result<Response, ContractError> {
+    let mut state = STORAGE.load(deps.storage)?;
+    let sender = info.sender.clone();
+    let scores = &mut state.scores;
+    scores.push((sender.clone(), score));
+    scores.sort_by(|a, b| b.cmp(a));
+    STORAGE.save(deps.storage, &state)?;
+
+    Ok(Response::new()
+        .add_attribute("method", "add")
+        .add_attribute("player", info.sender)
+        .add_attribute("score", score.to_string())
+    )
+}
+
+fn reset_scores(
+    deps: DepsMut,
+    info: MessageInfo,
+) -> Result<Response, ContractError> {
+    let state = State {
+        owner: info.sender.clone(),
+        scores: vec![],
+    };
+    STORAGE.save(deps.storage, &state)?;
+
+    Ok(Response::new()
+        .add_attribute("method", "reset"))
 }
 
 #[cfg_attr(not(feature = "library"), entry_point)]
