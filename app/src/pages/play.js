@@ -178,7 +178,7 @@ const Play = () => {
                 <span>Score: {score}</span>
                 <span>Difficulty: {difficulty}</span>
             </div>
-            {(gameHasStarted && gameOver && renderGameOver())}
+            {(gameHasStarted && gameOver && !loading && renderGameOver())}
 
             {loading? (
                 <LoadingIndicator />
