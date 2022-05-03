@@ -12,7 +12,7 @@ const Leaderboard = () => {
     useEffect(() => {
         setLoading(true);
         const fetchScores = async() => {
-            if (connectedWallet && connectedWallet.network.name === 'localterra') {
+            if (connectedWallet && connectedWallet.network.name === 'testnet') {
                 return (await query.getScores(connectedWallet)).scores;
             }
         };
