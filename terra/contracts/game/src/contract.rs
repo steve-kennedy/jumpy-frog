@@ -70,7 +70,9 @@ fn try_upsert_score(
     let index = scores.iter().position(|(s, _)| s == &sender);
     match index {
         Some(i) => {
-            scores[i].1 = score;
+            if scores[i].1 < score {
+                scores[i].1 = score;
+            }
         },
         None => {
             scores.push((sender.clone(), score));
