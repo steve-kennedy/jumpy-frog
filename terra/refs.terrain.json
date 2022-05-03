@@ -7,17 +7,17 @@
       }
     },
     "game": {
-      "codeId": "19",
+      "codeId": "20",
       "contractAddresses": {
-        "default": "terra1dem9lq2984kjy5p8pm9p93g0u99pu8ntye9w89"
+        "default": "terra1ncare3tnhppp3l47t0krwp0qcjmyhcacg8vc7e"
       }
     }
   },
   "testnet": {
     "game": {
-      "codeId": "69193",
+      "codeId": "69194",
       "contractAddresses": {
-        "default": "terra17n9rmhm0fj4ctst6xc9eewcdqulkhmmgslje56"
+        "default": "terra1qqdca6rc3zpw6fnyu4n7ur3apwam4vteenl0g7"
       }
     }
   }

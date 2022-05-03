@@ -21,7 +21,7 @@ function App() {
             key={`connect-EXTENSION`}
             onClick={() => connect("EXTENSION")}
           >
-          Connect Terra Wallet
+          Connect Terra Station Wallet
           </button>
         </div>
       );
