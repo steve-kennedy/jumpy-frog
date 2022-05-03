@@ -1,17 +1,9 @@
 {
-    "localterra": {
-      "game": {
-        "codeId": "20",
-        "contractAddresses": {
-          "default": "terra1ncare3tnhppp3l47t0krwp0qcjmyhcacg8vc7e"
-        }
-      }
-    },
     "testnet": {
       "game": {
-        "codeId": "68870",
+        "codeId": "69262",
         "contractAddresses": {
-          "default": "terra1005f568zwcajqw7z3z8c6uqqm72t8xf5rdze0m"
+          "default": "terra1hedt4k360gt07l5qfxte3tykyldvmvjw4ud505"
         }
       }
     }
