@@ -3,8 +3,8 @@ import './AuthorInfo.css';
 import twitterImg from './twitter-logo.svg';
 import webImg from './website-logo.png';
 
-const TWITTER_LINK = 'https://twitter.com/struikeny'
-const WEBSITE_LINK = 'https://stevekennedy.io'
+const TWITTER_LINK = 'https://twitter.com/struikeny';
+const WEBSITE_LINK = 'https://stevekennedy.io';
 
 const AuthorInfo = () => {
     return (
@@ -20,6 +20,6 @@ const AuthorInfo = () => {
         </div>
       </div>
     )
-}
+};
 
 export default AuthorInfo;
