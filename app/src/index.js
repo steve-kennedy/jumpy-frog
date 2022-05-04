@@ -4,15 +4,13 @@ import ReactDOM from 'react-dom';
 
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import './index.css';
+import AuthorInfo from './components/AuthorInfo';
 
 import Play from './pages/play';
 import Guide from './pages/guide';
 import Scoreboard from './pages/scoreboard';
 
 import { getChainOptions, WalletProvider } from '@terra-money/wallet-provider';
-
-const TWITTER_HANDLE = 'struikeny';
-const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 getChainOptions().then((chainOptions) => {
   ReactDOM.render(
@@ -29,17 +27,7 @@ getChainOptions().then((chainOptions) => {
             </BrowserRouter>
     
             <div className="footer-container">
-              <img
-                alt="Twitter Logo"
-                className="twitter-logo"
-                src="/twitter-logo.svg"
-              />
-              <a
-                className="footer-text"
-                href={TWITTER_LINK}
-                target="_blank"
-                rel="noreferrer"
-              >{`Made by Steve Kennedy`}</a>
+              <AuthorInfo />
             </div>
           </div>
       </WalletProvider>
